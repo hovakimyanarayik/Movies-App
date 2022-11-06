@@ -10,7 +10,7 @@ import SliderBrowser from '../common/sliderBrowser';
 import SectionLoader from '../loaders/sectionLoader';
 
 
-const PopularSlider = () => {
+const TrandingSlider = () => {
     const [sliderItems, setSliderItems] = useState(null)
     const [currentSlide, setCurrentSlide] = useSlider()
 
@@ -46,4 +46,4 @@ const PopularSlider = () => {
      );
 }
  
-export default PopularSlider;
+export default TrandingSlider;

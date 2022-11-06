@@ -5,6 +5,7 @@ import Home from "./layouts/Home";
 import Movies from "./layouts/Movies";
 import Networks from "./layouts/Networks";
 import NavBar from "./components/navBar/navBar";
+import Footer from "./components/footer/footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/movies" element={<Movies />} />
             <Route path="/networks" element={<Networks />} />
           </Routes>
+          <Footer />
         </div>
       </BrowserRouter>
     </ChakraProvider>

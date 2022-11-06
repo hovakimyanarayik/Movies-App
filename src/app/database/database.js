@@ -1,5 +1,5 @@
 import { API_KEY } from './apiKey'
-
+import queryString from 'query-string'
 
 class DataBase {
     static checkStatus(response) {
@@ -9,7 +9,7 @@ class DataBase {
         return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
             .then(DataBase.checkStatus)
     }
-    
+
     static getTrendingMovies() {
         return fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`)
             .then(DataBase.checkStatus)
@@ -25,10 +25,23 @@ class DataBase {
             .then(DataBase.checkStatus)
     }
 
+    static getMovies({page=1, genres=[] }) {
+        const reformedOptions = {
+            page,
+            with_genres: genres.join('%2C'),
+        }
+        return fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${queryString.stringify(reformedOptions)}`)
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+            })
+    }
+
     static getOriginalImageURL(link) {
         return `https://image.tmdb.org/t/p/original${link}`
     }
 
 }
+
 
 export default DataBase;
