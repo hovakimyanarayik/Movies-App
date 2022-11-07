@@ -2,7 +2,7 @@ export function formateDate(date) {
   const formatter = new Intl.DateTimeFormat("en", {
     year: "numeric",
     month: "long",
-    day: "numeric",
+    // day: "numeric",
   });
   return formatter.format(new Date(date))
 }
@@ -10,4 +10,11 @@ export function formateDate(date) {
  
 export function calcMargin(current, per) {
   return `-${current * 100}${per === 4 ? "%" : "vw"}`
+}
+
+export function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    left: 0
+  })
 }

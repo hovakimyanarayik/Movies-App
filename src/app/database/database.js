@@ -25,16 +25,19 @@ class DataBase {
             .then(DataBase.checkStatus)
     }
 
+    static getGenres() {
+        return fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`)
+            .then(DataBase.checkStatus)
+    }
+
     static getMovies({page=1, genres=[] }) {
+        console.log('ddddddddddddddddddddddddddddddddddd' ,genres);
         const reformedOptions = {
             page,
             with_genres: genres.join('%2C'),
         }
         return fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${queryString.stringify(reformedOptions)}`)
-            .then(response => response.json())
-            .then(response => {
-                console.log(response);
-            })
+            .then(DataBase.checkStatus)
     }
 
     static getOriginalImageURL(link) {

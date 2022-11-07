@@ -14,9 +14,13 @@ function App() {
         <div className="container">
           <NavBar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="/networks" element={<Networks />} />
+            <Route path="" element={<Home />} />
+            {/* <Route path="movies" element={<Movies />} /> */}
+            <Route path="movies" >
+              <Route path="" element={<Movies />} />
+              <Route path=":page" element={<Movies />} />
+            </Route>
+            <Route path="networks" element={<Networks />} />
           </Routes>
           <Footer />
         </div>

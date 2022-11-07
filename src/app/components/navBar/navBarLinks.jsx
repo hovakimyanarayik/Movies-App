@@ -10,8 +10,8 @@ const NavBarLinks = () => {
     
     return ( 
         <div className='nav-left'>
-            <Link to={'/'}>
-                <Logo />
+            <Link to={''}>
+                <Logo  />
             </Link>
             {layoutsList.map(item => (
                 <NavLink key={item.title} isActive={true} {...item}  />
