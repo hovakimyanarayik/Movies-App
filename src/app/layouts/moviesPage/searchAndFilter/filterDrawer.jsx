@@ -4,7 +4,7 @@ import { FaFilter } from 'react-icons/fa';
 import FilterDrawerContent from './filterDrawerContent';
 
 
-function FilterDrawer({ handleFilterChange }) {
+function FilterDrawer({ genres, handleGenreFilter }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()
   
@@ -32,7 +32,7 @@ function FilterDrawer({ handleFilterChange }) {
           
         >
           <DrawerOverlay />
-          <FilterDrawerContent handleFilterChange={handleFilterChange} />
+          <FilterDrawerContent genres={genres} handleGenreFilter={handleGenreFilter} />
         </Drawer>
       </div>
     )

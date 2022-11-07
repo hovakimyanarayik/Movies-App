@@ -8,7 +8,7 @@ export const layoutsList = [
         title: "Movies"
     },
     {
-        link: '/networks',
-        title: "Networks"
+        link: '/companies',
+        title: "Companies"
     }
 ]

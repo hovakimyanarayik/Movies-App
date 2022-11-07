@@ -1,8 +1,6 @@
 import './sectionSlider.css'
 import React, { useRef } from 'react';
 import { useEffect } from 'react';
-import { useState } from 'react';
-import { chunk } from 'lodash'
 import { useSectionSlider } from './useSectionSlider';
 import { calcMargin } from '../../utils';
 import SectionSliderPage from './sectionSliderPage';

@@ -4,14 +4,14 @@ import FilterDrawerHeader from './drawerHeader';
 import GenreForm from './genreForm';
 
 
-const FilterDrawerContent = ({handleFilterChange}) => {
+const FilterDrawerContent = ({genres, handleGenreFilter}) => {
     return ( 
         <DrawerContent color='#fff' backgroundColor='#222'>
             <DrawerCloseButton />
             <FilterDrawerHeader />
   
             <DrawerBody>
-                <GenreForm handleFilterChange={handleFilterChange} />
+                <GenreForm genres={genres} handleGenreFilter={handleGenreFilter} />
             </DrawerBody>
   
         </DrawerContent>

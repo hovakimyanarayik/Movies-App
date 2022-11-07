@@ -1,5 +1,3 @@
-import { StarIcon } from '@chakra-ui/icons';
-import { Box } from '@chakra-ui/react';
 import React from 'react';
 import VoteStars from '../../../components/common/voteStars';
 import DataBase from '../../../database/database';

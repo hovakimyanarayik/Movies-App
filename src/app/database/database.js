@@ -31,11 +31,13 @@ class DataBase {
     }
 
     static getMovies({page=1, genres=[] }) {
-        console.log('ddddddddddddddddddddddddddddddddddd' ,genres);
         const reformedOptions = {
             page,
-            with_genres: genres.join('%2C'),
+            with_genres: genres.join(',')
         }
+        
+        // genres.join('%2C')
+        console.log('database', reformedOptions);
         return fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${queryString.stringify(reformedOptions)}`)
             .then(DataBase.checkStatus)
     }

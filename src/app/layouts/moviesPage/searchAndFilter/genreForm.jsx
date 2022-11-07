@@ -1,27 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import SectionLoader from '../../../components/loaders/sectionLoader';
-import DataBase from '../../../database/database';
+import React from 'react';
 import GenreCheckbox from './genreCheckbox';
 
 
-const GenreForm = ({handleFilterChange}) => {
-    const [genres, setGenres] = useState(null)
-
-    useEffect(() => {
-        DataBase.getGenres()
-            .then(data => setGenres(data.genres))
-    }, [])
-
-    if(!genres) return (
-        <SectionLoader/>
-    )
+const GenreForm = ({genres, handleGenreFilter}) => {
+    console.log('form', genres);
     return ( 
         <form>
             {genres.map(genre => (
                 <GenreCheckbox
-                    handleChange={handleFilterChange}
+                    {...genre}
+                    handleChange={handleGenreFilter}
                     key={genre.id} 
-                    content={genre}
                 />)
             )}
         </form>

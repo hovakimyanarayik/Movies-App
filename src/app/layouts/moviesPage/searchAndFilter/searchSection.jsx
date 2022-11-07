@@ -3,11 +3,11 @@ import SearchForm from './searchForm';
 import FilterDrawer from './filterDrawer';
 
 
-const SearchSection = ({ handleFilterChange }) => {
+const SearchSection = ({genres, handleGenreFilter}) => {
     return ( 
         <div className='search-section'>
             <SearchForm />
-            <FilterDrawer handleFilterChange={handleFilterChange} />
+            <FilterDrawer genres={genres} handleGenreFilter={handleGenreFilter} />
         </div>
      );
 }

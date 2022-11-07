@@ -80,3 +80,22 @@
 .genre-input p {
     font-size: 1.6rem;
 }
+
+.single-genre-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.single-genre-wrapper label {
+    font-size: 1.7rem;
+    font-weight: 100;
+    margin-left: 1rem;
+    width: 100%;
+    cursor: pointer;
+    color: lightgray;
+}
+
+.single-genre-wrapper label:hover {
+    color: white;
+    text-decoration: underline;
+}
