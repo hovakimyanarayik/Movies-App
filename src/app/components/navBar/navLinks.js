@@ -1,14 +1,14 @@
-export const layoutsList = [
+export const navLinks = [
     {
-        link: '/',
+        path: '/',
         title: "Home"
     },
     {
-        link: '/movies',
+        path: '/movies',
         title: "Movies"
     },
     {
-        link: '/companies',
+        path: '/companies',
         title: "Companies"
     }
 ]

@@ -18,7 +18,8 @@ const Pagination = ({totalPages, currentPage, onPageChange}) => {
     function handlePageChange(direction) {
         onPageChange(direction === 'prev' ? currentPage - 1 : currentPage + 1)
     }
-    
+
+    if(totalPages === 0) return null
     return ( 
         <div className='pages-wrapper'>
             <Link to={`/movies/${currentPage - 1}`} >

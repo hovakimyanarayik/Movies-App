@@ -28,12 +28,21 @@ const Movies = () => {
         scrollToTop()
     }
 
+    function handleMovieSearch(query) {
+        DataBase.searchMovies(query)
+        .then(setData)
+    }
+    
     return ( 
         <div className='layout'>
             <SectionsWrapper>
                 {genres && 
                     <Section title='Search Movies'  icon={<FaSearch size={20} />}>
-                        <SearchSection genres={genres} handleGenreFilter={handleGenreFilter} />
+                        <SearchSection 
+                            onSearch={handleMovieSearch} 
+                            genres={genres} 
+                            handleGenreFilter={handleGenreFilter} 
+                        />
                     </Section>
                 }
                 {data && <>

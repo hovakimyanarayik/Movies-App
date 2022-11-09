@@ -1,17 +1,28 @@
 import { SearchIcon } from '@chakra-ui/icons';
 import { IconButton, Input } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 
 
-const SearchForm = () => {
+const SearchForm = ({ onSearch }) => {
+    const [searchValue, setSearchValue] = useState('')
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if(!searchValue.trim()) return;
+        onSearch(searchValue.trim())
+        setSearchValue('')
+    }
+
     return ( 
-        <form>
+        <form onSubmit={handleSubmit}>
                 <Input
                     variant='filled' 
                     placeholder='Find a movie'
                     size='lg' 
                     fontSize='3xl'
                     padding='6'
+                    value={searchValue}
+                    onChange={({ target }) => setSearchValue(target.value)}
                 />
                 <IconButton
                     colorScheme='whiteAlpha'

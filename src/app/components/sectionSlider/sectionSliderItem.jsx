@@ -8,6 +8,7 @@ const SectionSliderItem = ({ data }) => {
 
     return ( 
         <div 
+            title={data.title}
             className={`section-slider-item ${moved ? 'kenburns-top' : ''}`}
             style={{backgroundImage: `url(${DataBase.getOriginalImageURL(data.poster_path)})`}}
             onMouseEnter={() => setMoved(true)}

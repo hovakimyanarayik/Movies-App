@@ -1,14 +1,16 @@
 import React from 'react';
 import VoteStars from '../../../components/common/voteStars';
-import DataBase from '../../../database/database';
+import DataBase, { notFoundImage } from '../../../database/database';
 import { formateDate } from '../../../utils';
 
 
 const MovieItem = ({data}) => {
-
     return ( 
-        <div className='movie-list-item'>
-            <img src={`${DataBase.getOriginalImageURL(data.poster_path)}`} alt="movie" />
+        <div className='movie-list-item' title={data.title}>
+            <img 
+                src={data.poster_path ? DataBase.getOriginalImageURL(data.poster_path) : notFoundImage} 
+                alt="movie" 
+            /> 
             <div>
                 <h1>{data.title}</h1>
                 {data.release_date && <p>Release date: {formateDate(data.release_date)}</p>}

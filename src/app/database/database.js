@@ -1,32 +1,34 @@
 import { API_KEY } from './apiKey'
 import queryString from 'query-string'
 
+const url = 'https://api.themoviedb.org/3/'
+
 class DataBase {
     static checkStatus(response) {
         return response.status < 400 ? response.json() : null
     }
     static getPopularMovies() {
-        return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
+        return fetch(`${url}movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
             .then(DataBase.checkStatus)
     }
 
     static getTrendingMovies() {
-        return fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`)
+        return fetch(`${url}trending/movie/day?api_key=${API_KEY}`)
             .then(DataBase.checkStatus)
     }
 
     static getUpcomingMovies() {
-        return fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`)
+        return fetch(`${url}movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`)
             .then(DataBase.checkStatus)
     }
 
     static getTopRatedMovies() {
-        return fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`)
+        return fetch(`${url}movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`)
             .then(DataBase.checkStatus)
     }
 
     static getGenres() {
-        return fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`)
+        return fetch(`${url}genre/movie/list?api_key=${API_KEY}&language=en-US`)
             .then(DataBase.checkStatus)
     }
 
@@ -35,10 +37,13 @@ class DataBase {
             page,
             with_genres: genres.join(',')
         }
-        
-        // genres.join('%2C')
-        console.log('database', reformedOptions);
-        return fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${queryString.stringify(reformedOptions)}`)
+        return fetch(`${url}discover/movie?api_key=${API_KEY}&language=en-US&${queryString.stringify(reformedOptions)}`)
+            .then(DataBase.checkStatus)
+    }
+
+    static searchMovies(query) {
+        console.log(query);
+        return fetch(`${url}search/movie?api_key=${API_KEY}&query=${query}`)
             .then(DataBase.checkStatus)
     }
 
@@ -48,5 +53,6 @@ class DataBase {
 
 }
 
+export const notFoundImage = 'https://www.vinelanddriveintheater.com/assets/front/images/comingSoon.jpg'
 
 export default DataBase;

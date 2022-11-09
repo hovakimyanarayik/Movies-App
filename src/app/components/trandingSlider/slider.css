@@ -47,8 +47,7 @@
 
 
 .slider-browser {
-    background-color: black;
-    opacity: .6;
+    background-color: rgba(0, 0, 0, .3);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -58,7 +57,7 @@
 }
 
 .slider-browser:hover {
-    opacity: .9;
+    background-color: rgba(0, 0, 0, .8);
 }
 
 .browse-left {

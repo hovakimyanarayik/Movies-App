@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link} from 'react-router-dom';
-import { layoutsList } from '../../layouts/layoutsList';
+import { Link, NavLink} from 'react-router-dom';
+import { navLinks } from './navLinks';
+import { scrollToTop } from '../../utils';
 import Logo from '../common/logo';
-import NavLink from './navLink';
 
 
 
@@ -13,8 +13,16 @@ const NavBarLinks = () => {
             <Link to={''}>
                 <Logo  />
             </Link>
-            {layoutsList.map(item => (
-                <NavLink key={item.title} isActive={true} {...item}  />
+            {navLinks.map(item => (
+                <NavLink 
+                    className='nav-link'
+                    key={item.title} 
+                    to={item.path}
+                    style={({isActive}) => isActive ? {color: "white", textDecoration: "underline"} : {} }
+                    onClick={scrollToTop}
+                >
+                    {item.title}
+                </NavLink>
             ))}
         </div>
      );

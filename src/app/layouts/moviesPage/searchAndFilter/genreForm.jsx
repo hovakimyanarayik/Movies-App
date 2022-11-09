@@ -3,7 +3,6 @@ import GenreCheckbox from './genreCheckbox';
 
 
 const GenreForm = ({genres, handleGenreFilter}) => {
-    console.log('form', genres);
     return ( 
         <form>
             {genres.map(genre => (

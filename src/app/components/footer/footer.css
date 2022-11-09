@@ -1,8 +1,11 @@
 .footer-wrapper {
     width: 100%;
     padding: 3rem 0;
-    margin-top: 7rem;
     background-color: #333;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .footer-content {
