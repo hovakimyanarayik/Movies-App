@@ -1,6 +1,6 @@
 import './slider.css'
 import React from 'react';
-import DataBase from '../../database/database';
+import DataBase, { endpoints } from '../../database/database';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import SliderItem from './sliderItem';
@@ -15,7 +15,7 @@ const TrandingSlider = () => {
     const [currentSlide, setCurrentSlide] = useSlider()
 
     useEffect(() => {
-        DataBase.getTrendingMovies()
+        DataBase.get(endpoints.trending())
         .then(data => setSliderItems(data.results.slice(0, 10)))
     }, [])
 

@@ -5,9 +5,9 @@ import Section from '../components/common/section';
 import SectionsWrapper from '../components/common/sectionsWrapper';
 import SearchSection from './moviesPage/searchAndFilter/searchSection';
 import SectionLoader from '../components/loaders/sectionLoader';
-import DataBase from '../database/database';
+import DataBase, { endpoints } from '../database/database';
 import Pagination from './moviesPage/pagination/pagination';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { scrollToTop } from '../utils';
 import { useFilterByGenres } from './moviesPage/searchAndFilter/useFilterByGenres';
 const MoviesList = React.lazy(() => import('./moviesPage/moviesList/moviesList'))
@@ -15,21 +15,26 @@ const MoviesList = React.lazy(() => import('./moviesPage/moviesList/moviesList')
 
 const Movies = () => {
     const [data, setData] = useState(null)
-    const [options, setOptions] = useState({page: useParams().page ?? 1, genres: []})
+    // const [options, setOptions] = useState({page: useParams().page ?? 1, with_genres: []})
+    const [searchParams, setSearchParams] = useSearchParams()
     const {genres, handleGenreFilter} = useFilterByGenres(setOptions)
-
+    console.log(searchParams);
     useEffect(() => {
-        DataBase.getMovies(options)
+        DataBase.get(endpoints.all(), searchParams.toString())
             .then(setData)
     }, [options])
 
     function handlePageChange(page) {
-        setOptions({...options, page: page})
+        // setOptions({...options, page: page})
+        setSearchParams({
+            ...searchParams,
+            page: page
+        })
         scrollToTop()
     }
 
     function handleMovieSearch(query) {
-        DataBase.searchMovies(query)
+        DataBase.get(endpoints.search() ,query)
         .then(setData)
     }
     

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
-import DataBase from "../../../database/database"
+import DataBase, { endpoints } from "../../../database/database"
 
 export function useFilterByGenres(setOptions) {
     const [genres, setGenres] = useState(null)
 
     useEffect(() => {
-        DataBase.getGenres()
+        DataBase.get(endpoints.genres())
             .then((response) => {
                 setGenres(response.genres.map(item => {
                     item.selected = false
@@ -15,7 +15,6 @@ export function useFilterByGenres(setOptions) {
     }, [])
 
     function handleGenreFilter(id) {
-        console.log(id);
         setGenres(prev => prev.map(item => {
             if(item.id === id) {
                 item.selected = !item.selected
@@ -28,7 +27,7 @@ export function useFilterByGenres(setOptions) {
         if(!genres) return
         setOptions({
             page: 1,
-            genres: genres.filter(item => item.selected).map(item => item.id)
+            with_genres: genres.filter(item => item.selected).map(item => item.id)
         })
     }, [genres])
     return {genres, handleGenreFilter}

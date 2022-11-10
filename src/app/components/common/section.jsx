@@ -9,7 +9,6 @@ const Section = ({title, icon, children}) => {
                 <h1 className='section-title'>{title} </h1>
                 {icon}
             </div>
-            {/* <h1 className='section-title'>{title} {icon}</h1> */}
             <Divider />
             {children}
         </div>

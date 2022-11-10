@@ -9,7 +9,7 @@ const SearchForm = ({ onSearch }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if(!searchValue.trim()) return;
-        onSearch(searchValue.trim())
+        onSearch({query: searchValue.trim()})
         setSearchValue('')
     }
 

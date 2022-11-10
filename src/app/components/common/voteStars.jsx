@@ -3,7 +3,7 @@ import { Box } from '@chakra-ui/react';
 import React from 'react';
 
 
-const VoteStars = ({votes = 10, size = 7}) => {
+const VoteStars = ({votes , size}) => {
     if(votes > 10) return;
 
     return ( 
@@ -19,6 +19,11 @@ const VoteStars = ({votes = 10, size = 7}) => {
                 ))}
         </Box>
      );
+}
+
+VoteStars.defaultProps = {
+    votes: 10,
+    size: 7
 }
  
 export default VoteStars;
