@@ -1,6 +1,6 @@
+import React, { useState } from 'react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { IconButton, Input } from '@chakra-ui/react';
-import React, { useState } from 'react';
 
 
 const SearchForm = ({ onSearch }) => {
@@ -10,7 +10,6 @@ const SearchForm = ({ onSearch }) => {
         e.preventDefault()
         if(!searchValue.trim()) return;
         onSearch({query: searchValue.trim()})
-        setSearchValue('')
     }
 
     return ( 

@@ -1,5 +1,5 @@
-import { Center, Heading } from '@chakra-ui/react';
 import React from 'react';
+import { Center, Heading } from '@chakra-ui/react';
 import Section from '../components/common/section';
 import SectionsWrapper from '../components/common/sectionsWrapper';
 

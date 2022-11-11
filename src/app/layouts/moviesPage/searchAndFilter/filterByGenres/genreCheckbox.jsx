@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-const GenreCheckbox = ({ name, id, selected, handleChange}) => {
+const GenreCheckbox = ({ name, id, selectedGenres, handleChange}) => {
     return (
         <div className='single-genre-wrapper'>
             <input
                 id={id}
                 type="checkbox" 
-                checked={selected} 
+                checked={selectedGenres.includes(id)} 
                 onChange={() => handleChange(id)} 
             />
             <label htmlFor={id}>{name}</label>

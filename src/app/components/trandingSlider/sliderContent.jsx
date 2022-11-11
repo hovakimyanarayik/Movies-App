@@ -1,12 +1,12 @@
+import React from 'react';
 import { ViewIcon } from '@chakra-ui/icons';
 import { Button, Divider } from '@chakra-ui/react';
-import React from 'react';
 import { formateDate } from '../../utils';
 
 
 
-const SliderContent = ( {data} ) => {
-    
+const SliderContent = ( {data, goToMovie} ) => {
+
     return ( 
         <div className="slider-content">
             <h1>{data.title}</h1>
@@ -19,6 +19,9 @@ const SliderContent = ( {data} ) => {
                 px={10} py={5} 
                 variant='outline'
                 title='Watch' 
+                onClick={() => {
+                    goToMovie(data.id)
+                }}
             >
                     <ViewIcon fontSize='16px' mr='10px' />
                 Watch

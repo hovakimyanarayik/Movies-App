@@ -13,21 +13,12 @@ const Routes = () => {
       path: "",
       element: <Home />,
     },
+    // {
+    //   path: "/movies",
+    //   element: <Movies />
+    // },
     {
-      path: "/movies",
-      children: [
-        {
-          path: "",
-          element: <Movies />,
-        },
-        {
-          path: ":page",
-          element: <Movies />,
-        },
-      ],
-    },
-    {
-        path: "/movie",
+        path: "/movies",
         children: [
             {
                 path: "",

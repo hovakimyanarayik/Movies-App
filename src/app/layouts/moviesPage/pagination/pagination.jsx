@@ -1,7 +1,5 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { Button } from '@chakra-ui/react';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import PageBrowsButton from './pageBrowsButton';
 
 
@@ -22,7 +20,6 @@ const Pagination = ({totalPages, currentPage, onPageChange}) => {
     if(totalPages === 0) return null
     return ( 
         <div className='pages-wrapper'>
-            <Link to={`/movies/${currentPage - 1}`} >
                 <PageBrowsButton 
                     handlePageChange={handlePageChange} 
                     direction='prev'
@@ -31,9 +28,7 @@ const Pagination = ({totalPages, currentPage, onPageChange}) => {
                     <ChevronLeftIcon fontSize={30} />
                     Previous
                 </PageBrowsButton>
-            </Link>
             <h1>{currentPage} of {pagesCount}</h1>
-            <Link to={`/movies/${currentPage + 1}`} >
                 <PageBrowsButton 
                     handlePageChange={handlePageChange} 
                     direction='next'
@@ -42,7 +37,6 @@ const Pagination = ({totalPages, currentPage, onPageChange}) => {
                     Next
                     <ChevronRightIcon fontSize={30} />
                 </PageBrowsButton>
-            </Link>
             
         </div>
      );

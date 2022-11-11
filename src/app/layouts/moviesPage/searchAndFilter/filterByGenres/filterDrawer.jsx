@@ -1,13 +1,20 @@
-import { Button, Drawer, DrawerOverlay, useDisclosure } from '@chakra-ui/react';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import DataBase, { endpoints } from '../../../../database/database';
 import { FaFilter } from 'react-icons/fa';
 import FilterDrawerContent from './filterDrawerContent';
+import { Button, Drawer, DrawerOverlay, useDisclosure } from '@chakra-ui/react';
 
 
-function FilterDrawer({ genres, handleGenreFilter }) {
+function FilterDrawer() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()
-  
+    const [genres, setGenres] = useState(null)
+
+    useEffect(() => {
+        DataBase.get(endpoints.genres())
+        .then(res => setGenres(res.genres))
+    }, [])
+
     return (
       <div className='filter-contain'>
         <Button 
@@ -32,7 +39,7 @@ function FilterDrawer({ genres, handleGenreFilter }) {
           
         >
           <DrawerOverlay />
-          <FilterDrawerContent genres={genres} handleGenreFilter={handleGenreFilter} />
+          <FilterDrawerContent genres={genres} />
         </Drawer>
       </div>
     )

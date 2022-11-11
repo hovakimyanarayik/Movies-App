@@ -1,7 +1,7 @@
 import './sectionSlider.css'
-import React, { useRef } from 'react';
-import { useEffect } from 'react';
-import { useSectionSlider } from './useSectionSlider';
+import React, { useRef, useEffect } from 'react';
+import { useSectionSlider } from '../../hooks/useSectionSlider';
+import { useGoToMovie } from '../../hooks/useGoToMovie';
 import { calcMargin } from '../../utils';
 import SectionSliderPage from './sectionSliderPage';
 import SliderBrowser from '../common/sliderBrowser';
@@ -11,6 +11,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 const SectionSlider = ({data}) => {    
     const wrapperRef = useRef()
     const {currentSlide, setCurrentSlide, perSlide, chunkedItems} = useSectionSlider(wrapperRef, data)
+    const goToMovie = useGoToMovie()
 
     useEffect(() => {
         setCurrentSlide(0)
@@ -30,7 +31,7 @@ const SectionSlider = ({data}) => {
         <div className="section-slider-wrapper" ref={wrapperRef}>
             <div className="section-slider" style={{marginLeft: `${calcMargin(currentSlide, perSlide)}`}}>
                 {chunkedItems.map((chunk, idx) => (
-                    <SectionSliderPage key={idx} data={chunk} />
+                    <SectionSliderPage key={idx} data={chunk} goToMovie={goToMovie} />
                 ))}
             </div>
             {currentSlide > 0 && <SliderBrowser onClick={handleBrowse} direction={'left'}>

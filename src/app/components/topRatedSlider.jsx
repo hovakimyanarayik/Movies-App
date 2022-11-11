@@ -1,6 +1,4 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import DataBase, { endpoints } from '../database/database';
 import SectionLoader from './loaders/sectionLoader';
 import SectionSlider from './sectionSlider/sectionSlider';

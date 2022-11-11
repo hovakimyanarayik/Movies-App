@@ -1,12 +1,9 @@
-import React from 'react';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import DataBase from '../../database/database';
 
 
-const SectionSliderItem = ({ data }) => {
+const SectionSliderItem = ({ data, goToMovie }) => {
     const [moved, setMoved] = useState(false)
-    const navigate = useNavigate()
 
     return ( 
         <div 
@@ -16,7 +13,7 @@ const SectionSliderItem = ({ data }) => {
             onMouseEnter={() => setMoved(true)}
             onMouseLeave={() => setMoved(false)}
             onClick={() => {
-                navigate(`movie/${data.id}`);
+                goToMovie(data.id);
             }}
             >
                 <div className={`section-slider-item-overlay ${moved ? 'show' : ''}`}>

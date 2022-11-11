@@ -1,6 +1,6 @@
+import React from 'react';
 import { StarIcon } from '@chakra-ui/icons';
 import { Box } from '@chakra-ui/react';
-import React from 'react';
 
 
 const VoteStars = ({votes , size}) => {

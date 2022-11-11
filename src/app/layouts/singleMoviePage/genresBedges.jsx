@@ -1,5 +1,5 @@
-import { Badge, Box } from '@chakra-ui/react';
 import React from 'react';
+import { Badge, Box } from '@chakra-ui/react';
 
 
 const GenresBedges = ({ genres }) => {

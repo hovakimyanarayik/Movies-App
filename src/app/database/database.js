@@ -29,8 +29,9 @@ class DataBase {
       ...defaultOptions,
       ...options,
     };
+    if(params.query && !params.with_genres) endpoint = endpoints.search()
     const queryParams = new URLSearchParams(Object.entries(params)).toString();
-    console.log(queryParams);
+
     return fetch(url + endpoint + "?" + queryParams).then(checkStatus);
   }
 

@@ -4,9 +4,16 @@ import DataBase, { notFoundImage } from '../../../database/database';
 import { formateDate } from '../../../utils';
 
 
-const MovieItem = ({data}) => {
+
+const MovieItem = ({data, goToMovie}) => {
     return ( 
-        <div className='movie-list-item' title={data.title}>
+        <div 
+            className='movie-list-item' 
+            title={data.title}
+            onClick={() => {
+                goToMovie(data.id)
+            }}
+        >
             <img 
                 src={data.poster_path ? DataBase.getOriginalImageURL(data.poster_path) : notFoundImage} 
                 alt="movie" 

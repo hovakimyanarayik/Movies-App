@@ -1,6 +1,6 @@
 import './footer.css'
-import { Divider } from '@chakra-ui/react';
 import React from 'react';
+import { Divider } from '@chakra-ui/react';
 import Logo from '../common/logo';
 import SectionsWrapper from '../common/sectionsWrapper';
 import FooterContent from './footerContent';

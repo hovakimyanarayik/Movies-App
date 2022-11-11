@@ -1,5 +1,5 @@
-import { Text } from '@chakra-ui/react';
 import React from 'react';
+import { Text } from '@chakra-ui/react';
 import Section from '../../components/common/section';
 import VoteStars from '../../components/common/voteStars';
 import { formateDate } from '../../utils';

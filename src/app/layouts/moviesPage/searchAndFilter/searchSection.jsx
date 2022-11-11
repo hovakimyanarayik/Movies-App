@@ -1,13 +1,14 @@
 import React from 'react';
-import SearchForm from './searchForm';
-import FilterDrawer from './filterDrawer';
+import SearchForm from './search/searchForm';
+import FilterDrawer from './filterByGenres/filterDrawer';
 
 
-const SearchSection = ({genres, handleGenreFilter, onSearch}) => {
+
+const SearchSection = ({onSearch}) => {
     return ( 
         <div className='search-section'>
             <SearchForm onSearch={onSearch} />
-            <FilterDrawer genres={genres} handleGenreFilter={handleGenreFilter} />
+            <FilterDrawer/>
         </div>
      );
 }
