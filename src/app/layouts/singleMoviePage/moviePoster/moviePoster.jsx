@@ -1,4 +1,4 @@
-import './singleMovie.css'
+import '../singleMovie.css'
 import React from 'react';
 import PosterWrapper from './posterWrapper';
 import PosterImage from './posterImage';

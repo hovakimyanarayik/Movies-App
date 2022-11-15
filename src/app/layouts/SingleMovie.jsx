@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import SectionLoader from '../components/loaders/sectionLoader';
 import DataBase, { endpoints } from '../database/database';
-import MoviePoster from './singleMoviePage/moviePoster';
+import { scrollToTop } from '../utils';
+import MoviePoster from './singleMoviePage/moviePoster/moviePoster';
 
 
 const SignleMovie = () => {
@@ -12,6 +13,7 @@ const SignleMovie = () => {
     useState(() => {
         DataBase.get(endpoints.byId(movieId))
         .then(setData)
+        scrollToTop()
     }, [])
     if(!data) return (
         <div className="layout">

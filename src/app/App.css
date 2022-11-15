@@ -139,6 +139,10 @@
   font-size: 3.2rem;
 }
 
-
+.more-less-toggler {
+  text-decoration: underline;
+  color: #5858c8;
+  margin-left: 1rem;
+}
 
 

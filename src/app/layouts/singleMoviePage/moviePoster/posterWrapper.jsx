@@ -1,5 +1,5 @@
 import React from 'react';
-import DataBase from '../../database/database';
+import DataBase from '../../../database/database';
 
 const PosterWrapper = ({ children, url }) => {
 

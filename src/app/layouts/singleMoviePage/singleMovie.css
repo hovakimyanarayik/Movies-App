@@ -30,3 +30,14 @@
     width: 100%;
     padding: 1rem 5rem;
 }
+
+.genre-bedge:hover {
+    transition: .2s;
+    transform: translateY(-3px);
+}
+
+
+.mt-20 {
+    margin-top: 2rem;
+    text-indent: 2rem;
+}

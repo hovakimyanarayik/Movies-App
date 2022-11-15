@@ -28,7 +28,7 @@ function FilterDrawer() {
         >
             <FaFilter size='16px' /> 
             &nbsp;
-            Genres
+            Filter
         </Button>
         <Drawer
           isOpen={isOpen}

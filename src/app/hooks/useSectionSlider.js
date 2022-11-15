@@ -3,12 +3,12 @@ import { useEffect, useState } from "react"
 
 function useResizeObserver(ref) {
     const [perSlide, setPerSlide] = useState(4)
-    const observer = new ResizeObserver(entries => {
-        entries.forEach(entrie => {
-            setPerSlide(Math.floor(entrie.contentRect.width / 245))
-        })
-    })
     useEffect(() => {
+        const observer = new ResizeObserver(entries => {
+            entries.forEach(entrie => {
+                setPerSlide(Math.floor(entrie.contentRect.width / 245))
+            })
+        })
         observer.observe(ref.current)
         return () => observer.disconnect(ref.current)
     }, [])

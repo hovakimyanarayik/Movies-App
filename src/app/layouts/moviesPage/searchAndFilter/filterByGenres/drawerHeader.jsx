@@ -5,7 +5,7 @@ import { Divider, DrawerHeader } from '@chakra-ui/react';
 const FilterDrawerHeader = () => {
     return ( 
         <DrawerHeader>
-            <h1 className='drawer-header'>Filter by Genres</h1>
+            <h1 className='drawer-header'>Movies Filter</h1>
             <Divider />
         </DrawerHeader>
      );

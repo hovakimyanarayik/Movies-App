@@ -5,10 +5,15 @@ export function useFilterByGenres() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [selectedGenres, setSelectedGenres] = useState(
             searchParams.get('with_genres') ? 
-            searchParams.get('with_genres').split(',').map(i => +i) : [])
+            searchParams.get('with_genres').split(',').map(i => Number(i)) : [])
 
     useEffect(() => {
         setSearchParams((prev) => {
+            if(!prev.has('with_genres') && !selectedGenres.length) {
+                return {
+                    ...Object.fromEntries(prev.entries())
+                }
+            }
             if(prev.get('with_genres') !== selectedGenres.join(',')) {
                 return {
                     ...Object.fromEntries(prev.entries()),

@@ -1,5 +1,5 @@
 import React from 'react';
-import DataBase, { notFoundImage } from '../../database/database';
+import DataBase, { notFoundImage } from '../../../database/database';
 
 const PosterImage = ({ url }) => {
 

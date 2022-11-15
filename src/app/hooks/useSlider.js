@@ -15,6 +15,5 @@ export function useSlider() {
 
         return () => {clearInterval(id)}
     }, [])
-
     return [currentSlide, setCurrentSlide]
 }

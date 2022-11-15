@@ -39,6 +39,8 @@
 }
 .movie-list-item:hover {
     box-shadow: 0px 0px 16px 0px rgba(0,0,0,1);
+    transition: .3s;
+    transform: translateY(-6px);
 }
 
 .movie-list-item div {
@@ -98,4 +100,8 @@
 .single-genre-wrapper label:hover {
     color: white;
     text-decoration: underline;
+}
+
+.option {
+    font-size: 1.6rem;
 }

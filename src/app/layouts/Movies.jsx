@@ -14,6 +14,10 @@ import MoviesList from './moviesPage/moviesList/moviesList';
 const Movies = () => {
     const [data, setData] = useState(null)
     const [searchParams, setSearchParams] = useSearchParams()
+    // ?????
+    useEffect(() => {
+        scrollToTop()
+    }, [data])
     useEffect(() => {
         DataBase.get(endpoints.all(), Object.fromEntries(searchParams.entries()))
             .then(setData)
@@ -24,7 +28,6 @@ const Movies = () => {
             ...Object.fromEntries(searchParams.entries()),
             page: page
         })
-        scrollToTop()
     }
 
     function handleMovieSearch(query) {

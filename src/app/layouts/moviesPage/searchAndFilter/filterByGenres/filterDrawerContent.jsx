@@ -2,6 +2,7 @@ import React from 'react';
 import {DrawerBody, DrawerCloseButton, DrawerContent } from '@chakra-ui/react';
 import FilterDrawerHeader from './drawerHeader';
 import GenreForm from './genreForm';
+import FilterByYear from '../filterByYear/filterByYear';
 
 
 const FilterDrawerContent = ({genres}) => {
@@ -12,6 +13,7 @@ const FilterDrawerContent = ({genres}) => {
             <FilterDrawerHeader />
   
             <DrawerBody>
+                <FilterByYear />
                 {genres && <GenreForm genres={genres} />}
             </DrawerBody>
   
