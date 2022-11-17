@@ -21,7 +21,7 @@ const MovieItem = ({data, goToMovie}) => {
             <div>
                 <h1>{data.title}</h1>
                 {data.release_date && <p>Release date: {formateDate(data.release_date)}</p>}
-                <VoteStars votes={data.vote_average} />
+                <VoteStars votes={data.vote_average} votesCount={data.vote_count} />
             </div>
         </div>
      );

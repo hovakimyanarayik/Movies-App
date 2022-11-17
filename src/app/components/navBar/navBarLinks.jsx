@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, NavLink} from 'react-router-dom';
 import { navLinks } from './navLinks';
-import { scrollToTop } from '../../utils';
 import Logo from '../common/logo';
 
 
@@ -19,7 +18,6 @@ const NavBarLinks = () => {
                     key={item.title} 
                     to={item.path}
                     style={({isActive}) => isActive ? {color: "white", textDecoration: "underline"} : {} }
-                    onClick={scrollToTop}
                 >
                     {item.title}
                 </NavLink>

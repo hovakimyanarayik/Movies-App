@@ -1,5 +1,5 @@
 import './sectionSlider.css'
-import React, { useRef, useEffect } from 'react';
+import React, { useRef} from 'react';
 import { useSectionSlider } from '../../hooks/useSectionSlider';
 import { useGoToMovie } from '../../hooks/useGoToMovie';
 import { calcMargin } from '../../utils';
@@ -10,22 +10,8 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 
 const SectionSlider = ({data}) => {    
     const wrapperRef = useRef()
-    const {currentSlide, setCurrentSlide, perSlide, chunkedItems} = useSectionSlider(wrapperRef, data)
+    const {currentSlide, handleBrowse, perSlide, chunkedItems} = useSectionSlider(wrapperRef, data)
     const goToMovie = useGoToMovie()
-
-    useEffect(() => {
-        setCurrentSlide(0)
-    }, [perSlide])
-
-    function handleBrowse(direction) {
-        if(direction === 'right' && currentSlide + 1 < chunkedItems.length) {
-            setCurrentSlide(currentSlide + 1)
-        } else if(direction === 'left' && currentSlide - 1 >= 0) {
-            setCurrentSlide(currentSlide - 1)
-        } else {
-            return
-        }
-    }
 
     return ( 
         <div className="section-slider-wrapper" ref={wrapperRef}>

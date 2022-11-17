@@ -19,10 +19,26 @@ export function useSectionSlider(ref, items) {
     const [currentSlide, setCurrentSlide] = useState(0)
     const perSlide = useResizeObserver(ref)
 
+    useEffect(() => {
+        setCurrentSlide(0)
+    }, [perSlide])
+
+    const chunkedItems = chunk(items, perSlide);
+
+    function handleBrowse(direction) {
+        if(direction === 'right' && currentSlide + 1 < chunkedItems.length) {
+            setCurrentSlide(currentSlide + 1)
+        } else if(direction === 'left' && currentSlide - 1 >= 0) {
+            setCurrentSlide(currentSlide - 1)
+        } else {
+            return
+        }
+    }
+
     return {
         currentSlide,
-        setCurrentSlide,
+        handleBrowse,
         perSlide,
-        chunkedItems: chunk(items, perSlide)
+        chunkedItems
     }
 }

@@ -61,10 +61,7 @@
   text-decoration: underline;
   color: white;
 }
-/* 
-.active {
-  color: white !important;
-} */
+
 
 /* logo */
 .logo {
@@ -119,7 +116,7 @@
 .section-wrapper {
   width: 100%;
   max-width: 100rem;
-  padding-top: .5rem;
+  padding: .5rem 1rem 0;
   margin: 4rem auto 0;
 }
 

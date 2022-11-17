@@ -1,11 +1,9 @@
-import { API_KEY } from "./apiKey";
-
+const API_KEY = process.env.REACT_APP_API_KEY
 const url = "https://api.themoviedb.org/3/";
 const defaultOptions = {
   api_key: API_KEY,
   language: "en-US",
 };
-
 function checkStatus(response) {
   return response.status < 400 ? response.json() : null;
 }
@@ -19,6 +17,9 @@ export const endpoints = {
   all: () => "discover/movie",
   search: () => "search/movie",
   byId: (id) => `movie/${id}`,
+  credits: (id) => `movie/${id}/credits`,
+  similar: (id) => `movie/${id}/similar`,
+  recomendations: (id) => `movie/${id}/recommendations`
 };
 export const notFoundImage =
   "https://www.vinelanddriveintheater.com/assets/front/images/comingSoon.jpg";

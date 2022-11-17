@@ -41,3 +41,50 @@
     margin-top: 2rem;
     text-indent: 2rem;
 }
+
+.credits-wrapper {
+    margin-top: 1rem;
+    min-width: 100%;
+    min-height: 200px;
+    display: flex;
+    overflow-x: auto;
+}
+
+.credits-item {
+    min-width: 16rem;
+    margin: .8rem;
+    cursor: pointer;
+}
+
+.credits-item img {
+    width: 100%;
+    max-width: 16rem;
+    border-radius: .5rem;
+    opacity: .6;
+}
+
+.credits-item:hover img {
+    transition: .2s;
+    opacity: 1;
+}
+
+.credits-item h1 {
+    font-size: 1.8rem;
+}
+
+.credits-item p {
+    font-size: 1.6rem;
+    opacity: .6;
+}
+
+.credits-wrapper::-webkit-scrollbar-track {
+	background-color: rgb(80, 80, 80);
+    border-radius: .5rem;
+} 
+.credits-wrapper::-webkit-scrollbar-thumb { 
+	border-radius: 5px;
+	background-color: #121317; 
+} 
+.credits-wrapper::-webkit-scrollbar { 
+    height: 1rem;
+} 

@@ -11,6 +11,7 @@ const GenresBedges = ({ genres }) => {
             {genres.map(genre => (
                 <Badge 
                     ml={2}
+                    mt={1}
                     key={genre.id}
                     fontSize='1.2rem'
                     className='genre-bedge'

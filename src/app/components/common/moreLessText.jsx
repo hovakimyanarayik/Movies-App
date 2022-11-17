@@ -18,16 +18,16 @@ const MoreLessText = ({fontSize, lessCharts, children, className}) => {
         <Text 
             fontSize={fontSize} 
             className={className}
+            role='button'
+            onClick={toggler}
         >
             {isMore ? children : children.slice(0, lessCharts) + '...'}
             <Text 
-                role='button'
                 as='span' 
                 fontSize={fontSize} 
                 color='#5858c8' 
                 textDecor='underline' 
                 ml='1rem'
-                onClick={toggler}
             >
                 {isMore ? 'Less' : 'More'}
             </Text> 

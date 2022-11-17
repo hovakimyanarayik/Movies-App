@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Section from '../components/common/section';
 import SectionsWrapper from '../components/common/sectionsWrapper';
 import TrandingSlider from '../components/trandingSlider/slider';
@@ -6,10 +6,12 @@ import TopRatedSlider from '../components/topRatedSlider';
 import UpcomingSlider from '../components/upcomingSlider';
 import PopularSlider from '../components/popularSlider';
 import { FaArrowUp, FaClock, FaStar } from 'react-icons/fa'
+import { scrollToTop } from '../utils';
 
 
 const Home = () => {
-
+    useEffect(scrollToTop)
+    
     return ( 
         <div className='layout'>
             <TrandingSlider />

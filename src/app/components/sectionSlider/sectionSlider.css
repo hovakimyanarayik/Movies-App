@@ -49,6 +49,28 @@
 }
 
 
+.slider-browser {
+  background-color: rgba(0, 0, 0, .3);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1.5rem;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+.slider-browser:hover {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.browse-left {
+  left: 0;
+}
+
+.browse-right {
+  right: 0;
+}
+
 .kenburns-top {
 	-webkit-animation: kenburns-top 1s ease-out  alternate both;
 	        animation: kenburns-top 1s ease-out  alternate both;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DataBase from '../../database/database';
+import DataBase, { notFoundImage } from '../../database/database';
 
 
 const SectionSliderItem = ({ data, goToMovie }) => {
@@ -9,7 +9,11 @@ const SectionSliderItem = ({ data, goToMovie }) => {
         <div 
             title={data.title}
             className={`section-slider-item ${moved ? 'kenburns-top' : ''}`}
-            style={{backgroundImage: `url(${DataBase.getOriginalImageURL(data.poster_path)})`}}
+            style={{backgroundImage: `url(${data.poster_path ? (
+                DataBase.getOriginalImageURL(data.poster_path)
+                ) : (
+                    notFoundImage
+                )})`}}
             onMouseEnter={() => setMoved(true)}
             onMouseLeave={() => setMoved(false)}
             onClick={() => {

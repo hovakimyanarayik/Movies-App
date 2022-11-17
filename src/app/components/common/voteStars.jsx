@@ -3,11 +3,11 @@ import { StarIcon } from '@chakra-ui/icons';
 import { Box } from '@chakra-ui/react';
 
 
-const VoteStars = ({votes , size}) => {
+const VoteStars = ({votes ,votesCount, size}) => {
     if(votes > 10) return;
 
-    return ( 
-        <Box display='flex' mt='2' alignItems='center'>
+    return (<>
+        <Box display='inline-flex' mt='2' alignItems='center'>
             {Array(5)
                 .fill('')
                 .map((_, i) => (
@@ -17,8 +17,8 @@ const VoteStars = ({votes , size}) => {
                     color={i < Math.round(votes / 2) ? 'teal.500' : 'gray.300'}
                 />
                 ))}
-        </Box>
-     );
+        </Box>{votesCount && ` / ${votesCount}`}
+        </>);
 }
 
 VoteStars.defaultProps = {
