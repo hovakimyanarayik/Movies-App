@@ -88,3 +88,7 @@
 .credits-wrapper::-webkit-scrollbar { 
     height: 1rem;
 } 
+
+.video {
+    margin-top: 3rem;
+}

@@ -10,6 +10,7 @@ import MovieCredits from './singleMoviePage/credits/movieCredits';
 import MoviePoster from './singleMoviePage/moviePoster/moviePoster';
 import { GoMirror, GoStar } from 'react-icons/go'
 import RecomendationsSlider from '../components/recomendationsSlider';
+import MovieVideo from './singleMoviePage/movieVideo/MovieVideo';
 
 
 const SignleMovie = () => {
@@ -30,6 +31,7 @@ const SignleMovie = () => {
         <div className="layout">
             <MoviePoster data={data} />
             <SectionsWrapper>
+                <MovieVideo id={movieId} />
                 <MovieCredits id={movieId} />
                 <Section title={'Recomendations'} icon={<GoStar size={25} />} >
                     <RecomendationsSlider id={movieId} />

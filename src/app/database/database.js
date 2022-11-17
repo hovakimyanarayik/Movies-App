@@ -19,7 +19,8 @@ export const endpoints = {
   byId: (id) => `movie/${id}`,
   credits: (id) => `movie/${id}/credits`,
   similar: (id) => `movie/${id}/similar`,
-  recomendations: (id) => `movie/${id}/recommendations`
+  recomendations: (id) => `movie/${id}/recommendations`,
+  videos: (id) => `movie/${id}/videos`
 };
 export const notFoundImage =
   "https://www.vinelanddriveintheater.com/assets/front/images/comingSoon.jpg";

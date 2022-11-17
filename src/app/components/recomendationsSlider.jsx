@@ -11,7 +11,6 @@ const RecomendationsSlider = ({id}) => {
         DataBase.get(endpoints.recomendations(id))
             .then(data => setData(data.results))
     }, [id])
-
     if(!data) return (
         <SectionLoader />
     )

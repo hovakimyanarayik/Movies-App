@@ -6,7 +6,12 @@ function useResizeObserver(ref) {
     useEffect(() => {
         const observer = new ResizeObserver(entries => {
             entries.forEach(entrie => {
-                setPerSlide(Math.floor(entrie.contentRect.width / 245))
+                if(entrie.contentRect.width < 500) {
+                    setPerSlide(2)
+                } else {
+                    setPerSlide(Math.trunc(entrie.contentRect.width / 245))
+                }
+                
             })
         })
         observer.observe(ref.current)

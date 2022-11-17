@@ -1,6 +1,6 @@
 import React from 'react';
 import { ViewIcon } from '@chakra-ui/icons';
-import { Button, Divider } from '@chakra-ui/react';
+import { Button, Divider, Text } from '@chakra-ui/react';
 import { formateDate } from '../../utils';
 
 
