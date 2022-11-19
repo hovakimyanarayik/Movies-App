@@ -34,10 +34,10 @@
     ],
     "overrides": [
       {
-          "rules": {
-            "files": ["**/*.js","**/*.jsx"],
+        "files": ["**/*.jsx"],
+        "rules": {
             "react-hooks/exhaustive-deps": "off"
-          }
+        }
       }
   ]
   },
