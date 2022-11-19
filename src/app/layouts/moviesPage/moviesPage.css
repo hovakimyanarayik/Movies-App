@@ -106,3 +106,41 @@
 .option {
     font-size: 1.6rem;
 }
+
+@media (max-width: 800px) {
+    .filter-contain {
+        padding: 0 2.5rem;
+     }
+
+}
+
+
+@media (max-width: 480px) {
+    .movies-list-wrapper {
+        grid-template-columns: 1fr 1fr;
+        gap: .5rem;
+        margin-top: 2rem;
+    }
+
+    .search-section {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .search-section form {
+        flex-grow: 1;
+        width: 100%;
+    }
+    .filter-contain {
+        padding: 0;
+        align-self: flex-end;
+     }
+
+     .pages-wrapper {
+        margin-top: 2.5rem;
+     }
+
+     .pages-wrapper h1 {
+        font-size: 1.7rem;
+        padding: .5rem;
+     }
+}

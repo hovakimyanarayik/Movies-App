@@ -92,3 +92,33 @@
 .video {
     margin-top: 3rem;
 }
+
+@media (max-width: 780px) {
+    .poster-flex {
+        flex-direction: column;
+        width: 95%;
+    }
+    .poster-image {
+        max-width: 26rem;
+    }
+    .poster-info {
+        padding: 0;
+    }
+} 
+
+@media (max-width: 480px) {
+    .poster-flex {
+        align-items: center;
+    }
+    .poster-image {
+        max-width: 20rem;
+    }
+    .credits-item {
+        margin: .3rem;
+        min-width: 12rem;
+    }
+    .credits-item img {
+        width: 100%;
+        max-width: 12rem;
+    }
+}

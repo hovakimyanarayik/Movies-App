@@ -8,10 +8,7 @@ import Logo from '../common/logo';
 const NavBarLinks = () => {
     
     return ( 
-        <div className='nav-left'>
-            <Link to={''}>
-                <Logo  />
-            </Link>
+        <div className='nav-right'>
             {navLinks.map(item => (
                 <NavLink 
                     className='nav-link'

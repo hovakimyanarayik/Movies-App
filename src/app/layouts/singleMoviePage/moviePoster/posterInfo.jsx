@@ -13,7 +13,7 @@ const PosterInfo = ({ data }) => {
         <div className="poster-info">
             <Section title={data.title} icon={<VoteStars votes={data.vote_average} />} >
                 {data.tagline && <Center opacity='.4'>
-                    <Text fontSize='2rem' fontStyle='oblique'>{data.tagline}</Text>
+                    <Text textAlign='center' fontSize='2rem' fontStyle='oblique'>{data.tagline}</Text>
                 </Center>}
                 <Text fontSize='1.5rem'>{`${data.runtime}min`}</Text>
                 <Text fontSize='1.5rem' mt={3}>{formateDate(data.release_date)}</Text>

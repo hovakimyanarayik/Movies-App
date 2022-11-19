@@ -45,7 +45,22 @@
     font-size: 1.3rem;
 }
 
+@media (max-width: 800px) {
+    .slider-content {
+        margin: 5rem;
+    }
+    .slider-content h1 {
+        font-size: 3rem;
+    }
+}
 
 
+@media (max-width: 480px) {
+    .slider-content {
+        margin: 1rem;
+    }
 
-
+    .slider-content h1 {
+        font-size: 2rem;
+    }
+}

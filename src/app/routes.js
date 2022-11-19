@@ -4,7 +4,6 @@ import { useRoutes } from "react-router-dom";
 const Home = React.lazy(() => import("./layouts/Home"));
 const Movies = React.lazy(() => import("./layouts/Movies"));
 const SingleMovie = React.lazy(() => import('./layouts/SingleMovie'))
-const Companies = React.lazy(() => import("./layouts/Companies"));
 const ErrorPage = React.lazy(() => import('./layouts/ErrorPage'))
 
 const Routes = () => {
@@ -13,10 +12,6 @@ const Routes = () => {
       path: "",
       element: <Home />,
     },
-    // {
-    //   path: "/movies",
-    //   element: <Movies />
-    // },
     {
         path: "/movies",
         children: [
@@ -29,10 +24,6 @@ const Routes = () => {
                 element: <SingleMovie />
             }
         ]
-    },
-    {
-      path: "/companies",
-      element: <Companies />,
     },
     {
         path: '*',

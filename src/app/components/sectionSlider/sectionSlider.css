@@ -104,3 +104,9 @@
               transform-origin: top;
     }
   }
+
+  @media (max-width: 480px) {
+    .section-slider-item-overlay h1 {
+      font-size: 1.7rem;
+    }
+  }

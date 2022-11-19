@@ -16,11 +16,12 @@
 
 
 .footer-content > div {
-    width: 50%;
+    width: 48%;
 }
 
 .footer-content h1 {
     font-size: 2.3rem;
+    text-decoration: underline;
 }
 
 .footer-content p {
@@ -52,3 +53,26 @@
     color: rgb(182, 192, 243);
 }
 
+@media (max-width: 800px) {
+    .footer-content h1 {
+        font-size: 2.2rem;
+    }
+    .footer-content p {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-wrapper {
+        padding: 0rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    .footer-content > div {
+        width: 90%;
+    }
+}
