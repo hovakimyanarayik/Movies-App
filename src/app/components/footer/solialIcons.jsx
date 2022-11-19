@@ -1,12 +1,16 @@
 import React from 'react';
-import { FaFacebook, FaInstagram, FaSnapchat, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 
 const SocialIconsList = () => {
 
     return ( 
         <div className='social-icons-list'>
-            <a href="https://www.facebook.com/profile.php?id=100006369948594" target="_blank">
+            <a 
+                href="https://www.facebook.com/profile.php?id=100006369948594" 
+                target="_blank" 
+                rel="noopener noreferrer"
+            >
                 <FaFacebook className='footer-icon' />
             </a>
             <FaInstagram className='footer-icon' />

@@ -8,7 +8,7 @@ const MovieCredits = ({id}) => {
     const [credits, setCredits] = useState(null)
     useEffect(() => {
         DataBase.get(endpoints.credits(id))
-        .then(res => setCredits(res.cast.filter(cred => cred.profile_path && cred.known_for_department == 'Acting')))
+        .then(res => setCredits(res.cast.filter(cred => cred.profile_path && cred.known_for_department === 'Acting')))
     }, [id])
     if(!credits || !credits.length) return(null)
     return (

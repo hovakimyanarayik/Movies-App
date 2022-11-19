@@ -10,7 +10,7 @@ const CreditItem = ({ credit }) => {
             className='credits-item'
             onClick={() => navigate(`/movies?with_people=${credit.id}`)}
         >
-            <img src={DataBase.getOriginalImageURL(credit.profile_path)} alt="Image" />
+            <img src={DataBase.getOriginalImageURL(credit.profile_path)} alt="Credit" />
             <h1>{credit.name} / <p>{credit.character}</p></h1>
         </div>
      );

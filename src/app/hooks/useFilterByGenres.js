@@ -26,12 +26,14 @@ export function useFilterByGenres() {
                 }
             }
         })
+
+        // eslint-disable-next-line
     }, [selectedGenres])
 
     const handleGenreFilter = (id) => {
         setSelectedGenres(
             selectedGenres.includes(id) ? 
-            selectedGenres.filter(i => i != id) : 
+            selectedGenres.filter(i => i !== id) : 
             [...selectedGenres, id]
         )
     }

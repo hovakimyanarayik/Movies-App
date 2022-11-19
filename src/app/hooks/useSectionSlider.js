@@ -16,6 +16,8 @@ function useResizeObserver(ref) {
         })
         observer.observe(ref.current)
         return () => observer.disconnect(ref.current)
+
+        // eslint-disable-next-line
     }, [])
     return perSlide
 }
