@@ -10,7 +10,10 @@ import { scrollToTop } from '../utils';
 
 
 const Home = () => {
-    useEffect(scrollToTop)
+    useEffect(() => {
+        scrollToTop()
+        document.title = 'Home'
+    })
     
     return ( 
         <div className='layout'>
