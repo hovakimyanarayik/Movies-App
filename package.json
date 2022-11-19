@@ -35,7 +35,7 @@
     "overrides": [
       {
           "rules": {
-            "files": ["**/*.js"],
+            "files": ["**/*.js","**/*.jsx"],
             "react-hooks/exhaustive-deps": "off"
           }
       }
