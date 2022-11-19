@@ -15,6 +15,8 @@ function useResizeObserver(ref) {
             })
         })
         observer.observe(ref.current)
+        
+        // eslint-disable-next-line
         return () => observer.disconnect(ref.current)
 
         // eslint-disable-next-line
