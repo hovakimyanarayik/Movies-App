@@ -1,8 +1,6 @@
 # Movies App
 
-## DEMO
-
-https://master--preeminent-kleicha-3f6666.netlify.app/
+# DEMO - https://arayik-movies.netlify.app/
 
 ## Tech Stack
 - React
